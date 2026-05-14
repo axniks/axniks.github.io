@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 860" role="img" aria-labelledby="title desc">
+  <title id="title">Ratio logo</title>
+  <desc id="desc">Gradient shield logo with the word Ratio and diagonal cut lines.</desc>
+  <defs>
+    <linearGradient id="ratioGradient" x1="0%" y1="75%" x2="100%" y2="20%">
+      <stop offset="0%" stop-color="#8f2eff"/>
+      <stop offset="35%" stop-color="#ff2f86"/>
+      <stop offset="68%" stop-color="#ff7a1a"/>
+      <stop offset="100%" stop-color="#ffc21a"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <path
+      d="M500 24
+         C318 20 154 61 58 120
+         L58 392
+         C58 587 220 736 474 836
+         C490 842 510 842 526 836
+         C780 736 942 587 942 392
+         L942 118
+         C845 61 681 20 500 24 Z"
+      fill="url(#ratioGradient)"
+    />
+    <path d="M532 24 L658 24 L563 196 L497 196 Z" fill="#050505"/>
+    <path d="M414 512 L480 512 L356 748 L292 716 Z" fill="#050505"/>
+    <text
+      x="500"
+      y="505"
+      fill="#ffffff"
+      font-family="Inter, Arial, Helvetica, sans-serif"
+      font-size="220"
+      font-weight="800"
+      text-anchor="middle"
+      letter-spacing="6"
+    >RATIO</text>
+  </g>
+</svg>
