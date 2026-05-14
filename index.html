@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axniks | Ratio</title>
+  <meta
+    name="description"
+    content="Axniks Ltd builds Ratio, AI employment risk triage for UK micro-businesses."
+  >
+  <style>
+    :root {
+      --bg: #f7f5f2;
+      --surface: rgba(255, 255, 255, 0.85);
+      --surface-strong: rgba(255, 255, 255, 0.97);
+      --text: #1a1210;
+      --muted: #6b4f3a;
+      --primary: #d63278;
+      --secondary: #e06b0a;
+      --tertiary: #c49200;
+      --border: rgba(0, 0, 0, 0.10);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255, 47, 134, 0.10), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 194, 26, 0.10), transparent 24%),
+        linear-gradient(180deg, #f7f5f2 0%, #ffffff 58%, #f7f5f2 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .shell {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 4.5rem 0 3rem;
+    }
+
+    .eyebrow,
+    .stat-label {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.75rem;
+      color: var(--tertiary);
+      font-weight: 700;
+    }
+
+    .hero-grid,
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+      align-items: center;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 0.95;
+      margin-bottom: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-brand img {
+      width: min(220px, 45vw);
+      filter: drop-shadow(0 18px 40px rgba(255, 79, 141, 0.22));
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-top: 0.25rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      border-radius: 999px;
+      padding: 0.9rem 1.25rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(16px);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--tertiary));
+      color: #050505;
+      border-color: transparent;
+    }
+
+    .panel,
+    .card,
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+    }
+
+    .panel {
+      padding: 1.5rem;
+    }
+
+    .hero-panel {
+      padding: 1.8rem;
+      background:
+        linear-gradient(165deg, rgba(214, 50, 120, 0.08), rgba(224, 107, 10, 0.07) 55%, rgba(196, 146, 0, 0.08)),
+        var(--surface-strong);
+    }
+
+    .hero-panel ul,
+    .card ul {
+      padding-left: 1.2rem;
+      margin: 0.75rem 0 0;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+
+    .stat {
+      padding: 1.1rem 1.2rem;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.01)),
+        var(--surface);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-top: 0.25rem;
+    }
+
+    section {
+      padding: 1rem 0 1.25rem;
+    }
+
+    .section-heading {
+      margin-bottom: 1.5rem;
+      max-width: 42rem;
+    }
+
+    .grid.cols-3 {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .grid.cols-2 {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .card {
+      padding: 1.4rem;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.015), rgba(0, 0, 0, 0.005)),
+        var(--surface);
+    }
+
+    .card h3 {
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+
+    .card p,
+    .card li,
+    .section-heading p,
+    .panel p {
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .quote {
+      border-left: 3px solid var(--primary);
+      padding-left: 1rem;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .brand-name {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .founder-photo {
+      width: min(120px, 40%);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      margin-bottom: 1rem;
+    }
+
+    .chat-phone {
+      max-width: 360px;
+      margin-top: 1rem;
+      border-radius: 20px;
+      border: 1px solid #cfd8dc;
+      background: #111b21;
+      padding: 10px;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-stack {
+      display: flex;
+      gap: 1rem;
+      align-items: stretch;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+    }
+
+    .chat-stack .chat-phone {
+      flex: 1 1 320px;
+      margin-top: 0;
+      height: 585px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-statusbar {
+      height: 22px;
+      color: #ffffff;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.3rem 0.35rem;
+      letter-spacing: 0.01em;
+    }
+
+    .chat-demo {
+      max-width: 100%;
+      margin-top: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #d5dbdf;
+      box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+      background: #e5ddd5;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .chat-top {
+      height: 59px;
+      background: #075e54;
+      border-bottom: 1px solid #d7dde1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 0.75rem;
+    }
+
+    .chat-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      min-width: 0;
+    }
+
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+      flex-shrink: 0;
+      overflow: hidden;
+      border: 1px solid #d7dde1;
+    }
+
+    .chat-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .chat-meta {
+      min-width: 0;
+      line-height: 1.1;
+    }
+
+    .chat-name {
+      font-size: 0.94rem;
+      color: #ffffff;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chat-status {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-top: 0.2rem;
+    }
+
+    .chat-icons {
+      font-size: 1rem;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      line-height: 1;
+      color: #ffffff;
+      opacity: 0.95;
+    }
+
+    .icon.menu {
+      font-size: 1.15rem;
+      transform: translateY(-1px);
+    }
+
+    .icon.search {
+      font-size: 0.95rem;
+    }
+
+    .icon.emoji,
+    .icon.clip,
+    .icon.mic {
+      font-size: 1.05rem;
+    }
+
+    .chat-body {
+      padding: 0.8rem 0.72rem;
+      background-color: #efeae2;
+      background-image:
+        radial-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+      background-size: 16px 16px, 20px 20px;
+      background-position: 0 0, 10px 10px;
+      flex: 1;
+    }
+
+    .chat-date {
+      width: fit-content;
+      margin: 0 auto 0.55rem;
+      background: rgba(255, 255, 255, 0.9);
+      color: #54656f;
+      border: 1px solid #e5e8ea;
+      border-radius: 7px;
+      padding: 0.2rem 0.45rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .chat-msg {
+      max-width: 78%;
+      padding: 0.46rem 0.56rem 0.44rem;
+      border-radius: 7.5px;
+      margin-bottom: 0.45rem;
+      font-size: 0.83rem;
+      line-height: 1.32;
+      position: relative;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+      padding-right: 3.3rem;
+    }
+
+    .chat-msg.user {
+      margin-left: auto;
+      background: #d9fdd3;
+      color: #111b21;
+      border-top-right-radius: 2px;
+    }
+
+    .chat-msg.user::after {
+       content: none;
+    }
+
+    .chat-msg.ratio {
+      margin-right: auto;
+      background: #ffffff;
+      color: #111b21;
+      border-top-left-radius: 2px;
+    }
+
+    .chat-msg.ratio::after {
+       content: none;
+    }
+
+    .chat-time {
+      position: absolute;
+      right: 0.42rem;
+      bottom: 0.2rem;
+      font-size: 0.66rem;
+      color: #667781;
+      white-space: nowrap;
+    }
+
+    .chat-options {
+      width: 92%;
+      margin: 0.25rem auto 0.6rem;
+      background: #ffffff;
+      border: 1px solid #d5dbdf;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .chat-option {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.58rem 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #00a5f4;
+      background: #ffffff;
+      border: 0;
+      border-bottom: 1px solid #ebedef;
+      cursor: default;
+    }
+
+    .chat-option:last-child {
+      border-bottom: 0;
+    }
+
+    .chat-ticks {
+      color: #53bdeb;
+      margin-left: 0.2rem;
+      letter-spacing: -0.08em;
+    }
+
+    .chat-input {
+      min-height: 61px;
+      background: #f0f2f5;
+      border-top: 1px solid #d8dde1;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.56rem 0.62rem;
+    }
+
+    .chat-input-icons {
+      color: #54656f;
+      font-size: 1.1rem;
+      display: inline-flex;
+      gap: 0.62rem;
+      flex-shrink: 0;
+    }
+
+    .chat-input-field {
+      flex: 1;
+      background: #ffffff;
+      border: 1px solid #d7dde1;
+      border-radius: 9px;
+      color: #667781;
+      font-size: 0.84rem;
+      padding: 0.46rem 0.62rem;
+    }
+
+    .chat-send {
+      color: #00a884;
+      font-size: 1.06rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    footer {
+      padding: 2.5rem 0 4rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero-brand {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .chat-stack {
+        flex-direction: column;
+      }
+
+      .chat-stack .chat-phone {
+        width: 100%;
+        max-width: 360px;
+        height: 585px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="shell">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <img src="./ratio-logo.svg" alt="Axniks Ratio logo" style="height: 3rem; width: auto;">
+          <div>
+            <p class="eyebrow" style="margin: 0;">Axniks Ltd</p>
+          </div>
+        </div>
+        <h1>Employment risk management for small businesses.</h1>
+        <p class="lead">
+          Axniks Ratio responds to small business HR problems over WhatsApp instantly, affordably and at scale. 
+          It uses AI in real time to retrieve and analyze employment law, ACAS policy and actual employment tribunal decisions,
+          then classifies risk and delivers structured, actionable guidance from plain language issue descriptions and questions.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:info@axniks.com">Get in touch</a>
+          <a class="button" href="#founder">About the founder</a>
+        </div>
+        <div class="chat-stack">
+          <div class="chat-phone">
+            <div class="chat-statusbar">
+              <span>1:42</span>
+              <span>◤ ◢</span>
+            </div>
+            <div class="chat-demo" aria-label="Example WhatsApp conversation part one">
+              <div class="chat-top">
+                <div class="chat-contact">
+                  <span class="chat-avatar"><img src="./ratio-logo.svg" alt="Ratio"></span>
+                  <div class="chat-meta">
+                    <div class="chat-name">Ratio</div>
+                    <div class="chat-status">online</div>
+                  </div>
+                </div>
+                <div class="chat-icons">
+                  <span class="icon search">⌕</span>
+                  <span class="icon menu">⋮</span>
+                </div>
+              </div>
+              <div class="chat-body">
+                <div class="chat-date">Today</div>
+                <div class="chat-msg user">I run a jewellery business in London. I posted "female sales assistant" for 3 days. A man sent a claim letter for sex discrimination and injury to feelings. Is this serious?<span class="chat-time">10:08<span class="chat-ticks">✓✓</span></span></div>
+                <div class="chat-msg ratio">Yes, this can be serious under the Equality Act. Confirm where the ad ran, exact wording, and whether anyone was hired.<span class="chat-time">10:08</span></div>
+                <div class="chat-msg user">Instagram and Facebook. Exact wording included "female". No hire was made and the post is deleted.<span class="chat-time">10:09<span class="chat-ticks">✓✓</span></span></div>
+              </div>
+              <div class="chat-input">
+                <div class="chat-input-icons">
+                  <span class="icon emoji">☺</span>
+                  <span class="icon clip">⌁</span>
+                </div>
+                <div class="chat-input-field">Type a message</div>
+                <div class="chat-send"><span class="icon mic">🎤</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="chat-phone">
+            <div class="chat-statusbar">
+              <span>1:42</span>
+              <span>◤ ◢</span>
+            </div>
+            <div class="chat-demo" aria-label="Example WhatsApp conversation part two">
+              <div class="chat-top">
+                <div class="chat-contact">
+                  <span class="chat-avatar"><img src="./ratio-logo.svg" alt="Ratio"></span>
+                  <div class="chat-meta">
+                    <div class="chat-name">Ratio</div>
+                    <div class="chat-status">online</div>
+                  </div>
+                </div>
+                <div class="chat-icons">
+                  <span class="icon search">⌕</span>
+                  <span class="icon menu">⋮</span>
+                </div>
+              </div>
+              <div class="chat-body">
+                <div class="chat-date">Today</div>
+                <div class="chat-msg ratio">I've found <strong>48,763</strong> relevant tribunal decisions. Summary: outcomes improve when ads are removed quickly, records are preserved, and replies stay factual with no admissions.<span class="chat-time">10:09</span></div>
+                <div class="chat-msg ratio">Initial assessment: medium risk. First steps: save evidence, draft a dated chronology, send a neutral acknowledgment, and avoid public comment.<span class="chat-time">10:10</span></div>
+                <div class="chat-options" role="group" aria-label="Next options">
+                  <button class="chat-option" type="button">Get more info for £12</button>
+                  <button class="chat-option" type="button">Get solicitor contacts</button>
+                </div>
+              </div>
+              <div class="chat-input">
+                <div class="chat-input-icons">
+                  <span class="icon emoji">☺</span>
+                  <span class="icon clip">⌁</span>
+                </div>
+                <div class="chat-input-field">Type a message</div>
+                <div class="chat-send"><span class="icon mic">🎤</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM + SOLUTION -->
+    <section id="product">
+      <div class="shell grid cols-2">
+        <article class="card">
+          <p class="eyebrow">Problem</p>
+          <h2>Micro-businesses face employment risk with no good options.</h2>
+          <p>
+            Dismissals, contractor disputes, tribunal threats, and ACAS claims are routine for small UK businesses. Solicitors
+            are expensive, HR platforms are built for larger firms, and generic guidance doesn't fit the facts.
+            Owners make costly decisions without proper support. Lack of technology utilization and management-skill gaps are major obstacles for small businesses.<sup><a href="#footnote-1" style="color: var(--primary);">1</a></sup>
+          </p>
+        </article>
+        <article class="card">
+          <p class="eyebrow">Solution</p>
+          <h2>Instant, structured employment guidance over WhatsApp.</h2>
+          <p>
+            Free triage, then <strong>fee-based pay-as-you-go or subscription</strong> for deeper analysis, generated documents, and clear next steps.
+            The automated response comes from real-time analysis of knowledge hidden across hundreds of thousands of
+            employment tribunal decisions, employment law, and ACAS policy. Higher-risk cases route to vetted human
+            support.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MARKET -->
+    <section id="market">
+      <div class="shell">
+        <div class="section-heading">
+          <p class="eyebrow">Opportunity</p>
+          <h2>A large, underserved market at the right moment.</h2>
+          <p>
+            Micro businesses in the UK employ millions of casual and informal workers.<sup><a href="#footnote-2" style="color: var(--primary);">2</a></sup> Employment disputes are rising, legal costs are not falling and LLMs now make structured,
+            and factual guidance economically viable for the first time. <strong>Ratio</strong> is built for exactly this window as a focused employment-risk service for this specific, underserved client group.
+          </p>
+          <p>
+            Ratio's models are trained and evaluated on <a href="https://www.ukri.org/opportunity/access-to-isambard-ai-and-dawn-airr-supercomputers-gateway-route/" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">Dawn</a>,
+            the Cambridge AI supercomputer, through a UKRI AI Research Resource grant — giving Ratio access to
+            frontier-scale compute from day one.
+          </p>
+        </div>
+      </div>
+
+      <div class="shell" style="font-size: 0.9rem; color: var(--muted); padding-top: 0.5rem;">
+        <p id="footnote-1">
+          [1] <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2024/07/10/seven-major-obstacles-small-businesses-may-encounter/" target="_blank" rel="noopener" style="color: var(--primary);">Forbes Business Council, "Seven Major Obstacles Small Businesses May Encounter" (Jul 10, 2024)</a>
+        </p>
+        <p id="footnote-2">
+          [2] <a href="https://www.gov.uk/government/statistics/business-population-estimates-2025/business-population-estimates-for-the-uk-and-regions-2025-statistical-release" target="_blank" rel="noopener" style="color: var(--primary);">Department for
+Business & Trade, "Business population estimates for the UK and regions 2025: statistical release" (Oct 2, 2025)</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section id="founder">
+      <div class="shell">
+        <article class="card" style="max-width: 640px;">
+          <img class="founder-photo" src="./axel.jpg" alt="Portrait of Axel Niklasson">
+          <p class="eyebrow">Founder</p>
+          <h2>Axel Niklasson, PhD</h2>
+          <p>
+            25+ years across software engineering, product leadership, and academic research. iOS engineering at
+            Mind Candy, MOO Print, and Curator (acquired by Pinterest). Research internship at Microsoft Research Cambridge.
+            PhD in Human–Computer Interaction from City St&nbsp;George's, University of London (2024).
+            Axniks is a <a href="https://www.natwest.com/business/business-services/entrepreneur-accelerator.html" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">NatWest Entrepreneur Accelerator</a> business.
+          </p>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="shell">
+      Axniks Ltd · Building <span class="brand-name">Ratio</span> for UK micro-businesses
+    </div>
+  </footer>
+</body>
+</html>
