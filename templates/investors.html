@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container pt-3 pt-md-4">
+  <div class="section-shell section-shell-strong p-4 p-md-5 mb-4">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-7">
+        <p class="eyebrow mb-2">Investor Brief</p>
+        <h1 class="display-4 display-tight mb-3">Employment risk management for small businesses.</h1>
+        <p class="lead copy-muted mb-4">
+          EmployerHub is the customer-facing service for small business HR issues.
+          Powered by Ratio, it uses AI in real time to retrieve and analyze employment law, ACAS policy and
+          tribunal decisions, then classifies risk and delivers structured guidance from plain-language issues.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-brand" href="mailto:info@axniks.com">Get in touch</a>
+          <a class="pill-link" href="#founder">About the founder</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card-soft p-3">
+          <p class="eyebrow mb-2">Signal</p>
+          <ul class="copy-muted mb-0">
+            <li>Focused on UK micro-business employment risk.</li>
+            <li>Built for rapid triage and high-volume messaging channels.</li>
+            <li>Escalates higher-risk cases into vetted human support.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-lg-6">
+      <div class="chat-phone h-100">
+        <div class="chat-demo h-100 d-flex flex-column">
+          <div class="chat-top">WhatsApp Example · Part 1</div>
+          <div class="chat-body flex-grow-1">
+            <div class="chat-msg user">I posted “female sales assistant” and received a discrimination claim letter. Is this serious?</div>
+            <div class="chat-msg ratio">This can be serious under the Equality Act. Confirm wording, channels, and whether anyone was hired.</div>
+            <div class="chat-msg user mb-0">Instagram and Facebook, wording included “female”, no hire made, now deleted.</div>
+          </div>
+          <div class="chat-action">Type a message</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="chat-phone h-100">
+        <div class="chat-demo h-100 d-flex flex-column">
+          <div class="chat-top">WhatsApp Example · Part 2</div>
+          <div class="chat-body flex-grow-1">
+            <div class="chat-msg ratio">I found 4,876 relevant tribunal decisions. Outcomes improve when records are preserved and responses remain factual.</div>
+            <div class="chat-msg ratio mb-0">Initial assessment: medium risk. First steps: save evidence, draft chronology, send neutral acknowledgement, avoid public comment.</div>
+          </div>
+          <div class="chat-action">Get more info for £12 · Get solicitor contacts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-6">
+      <article class="card-soft p-3 h-100">
+        <p class="eyebrow mb-2">Problem</p>
+        <h2 class="h4">Micro-businesses face employment risk with no good options.</h2>
+        <p class="copy-muted mb-0">
+          Dismissals, contractor disputes, tribunal threats, and ACAS claims are routine for small UK businesses.
+          Solicitors are expensive, HR platforms are built for larger firms, and generic guidance rarely fits the facts.
+          Owners make costly decisions without proper support.
+        </p>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card-soft p-3 h-100">
+        <p class="eyebrow mb-2">Solution</p>
+        <h2 class="h4">Instant, structured guidance over WhatsApp.</h2>
+        <p class="copy-muted mb-0">
+          Free triage, then fee-based pay-as-you-go or subscription for deeper analysis, generated documents, and
+          clear next steps. Higher-risk cases route to vetted human support.
+        </p>
+      </article>
+    </div>
+  </div>
+
+  <article class="section-shell p-4 p-md-5 mb-4">
+    <p class="eyebrow mb-2">Opportunity</p>
+    <h2 class="h2">A large, underserved market at the right moment.</h2>
+    <p class="copy-muted">
+      Micro-businesses in the UK employ millions of casual and informal workers. Employment disputes are rising,
+      legal costs are not falling and LLMs now make factual, structured guidance economically viable for the first
+      time. Ratio is built for this window as a focused employment-risk service for an underserved segment.
+    </p>
+    <p class="copy-muted mb-0">
+      Ratio's models are trained and evaluated on
+      <a href="https://www.ukri.org/opportunity/access-to-isambard-ai-and-dawn-airr-supercomputers-gateway-route/" target="_blank" rel="noopener" class="fw-semibold">Dawn</a>,
+      the Cambridge AI supercomputer, through a UKRI AI Research Resource grant.
+    </p>
+  </article>
+
+  <article id="founder" class="section-shell p-4 p-md-5">
+    <img class="founder-photo mb-3" src="{{ url_for('static', filename='images/axel.jpg') }}" alt="Portrait of Axel Niklasson">
+    <p class="eyebrow mb-2">Founder</p>
+    <h2 class="h3">Axel Niklasson, PhD</h2>
+    <p class="copy-muted mb-0">
+      25+ years across software engineering, product leadership, and academic research. iOS engineering at Mind Candy,
+      MOO Print, and Curator (acquired by Pinterest). Research internship at Microsoft Research Cambridge.
+      PhD in Human-Computer Interaction from City St George's, University of London (2024).
+      Axniks is a
+      <a href="https://www.natwest.com/business/business-services/entrepreneur-accelerator.html" target="_blank" rel="noopener" class="fw-semibold">NatWest Entrepreneur Accelerator</a>
+      business.
+    </p>
+  </article>
+</section>
+{% endblock %}
