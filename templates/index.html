@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="container pt-3 pt-md-4">
+  <article class="section-shell section-shell-strong p-4 p-md-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-8">
+        <p class="eyebrow mb-2">For UK SMEs and Micro-businesses</p>
+        <h1 class="display-5 display-tight mb-3">Employment problems? Get guidance in minutes.</h1>
+        <p class="lead copy-muted mb-4">
+          EmployerHub helps small businesses understand employment issues and find the right support,
+          starting with a WhatsApp conversation.
+        </p>
+        <p class="copy-muted mb-4">
+          EmployerHub uses Ratio AI to analyse employment situations using evidence from UK Employment Tribunal decisions.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a class="btn btn-lg btn-brand" href="{{ whatsapp_url }}" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="pill-link" href="{{ url_for('service_partner') }}">I want to be a partner</a>
+          <a class="pill-link" href="{{ url_for('solicitor_partner') }}">I am a solicitor</a>
+          <a class="pill-link" href="{{ url_for('investors') }}">Investors</a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card-soft p-3">
+          <p class="eyebrow mb-2">How it works</p>
+          <ol class="copy-muted mb-0">
+            <li>Message EmployerHub on WhatsApp.</li>
+            <li>Get rapid risk triage and practical actions.</li>
+            <li>Escalate high-risk cases to specialist support powered by Ratio.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+{% endblock %}
